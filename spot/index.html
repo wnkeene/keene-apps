@@ -92,6 +92,41 @@
         .app-store-badge img {
             height: 50px;
         }
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .share-btn:hover {
+            opacity: 0.8;
+            text-decoration: none;
+        }
+        .share-btn.twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+        .share-btn.facebook {
+            background: #1877F2;
+            color: white;
+        }
+        .share-btn.copy {
+            background: #6e6e73;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -161,6 +196,13 @@
         <p><strong>Important:</strong> Always read agrochemical labels for all warnings and directions before use. This app is a calculation tool only and does not replace professional agricultural advice or product label instructions.</p>
         
         <p><strong>Acceptance:</strong> By downloading, installing, or using Spot Calculator, you acknowledge that you have read, understood, and agree to this disclaimer and accept all associated risks.</p>
+    </div>
+
+    <h2>Share</h2>
+    <div class="share-buttons">
+        <a class="share-btn twitter" href="https://twitter.com/intent/tweet?text=Check%20out%20Spot%20Spray%20Calculator%20-%20Precision%20agrochemical%20spray%20mixing%20for%20iPhone%2C%20iPad%2C%20and%20Mac!&url=https://wnkeene.github.io/keene-apps/spot/" target="_blank">𝕏 Tweet</a>
+        <a class="share-btn facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://wnkeene.github.io/keene-apps/spot/" target="_blank">Facebook</a>
+        <button class="share-btn copy" onclick="navigator.clipboard.writeText('https://wnkeene.github.io/keene-apps/spot/'); this.textContent='Copied!';">Copy Link</button>
     </div>
 
     <div class="footer">
