@@ -26,10 +26,21 @@
             padding: 20px;
             background-color: #f5f5f7;
         }
-        h1 {
-            color: #1d1d1f;
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
             border-bottom: 2px solid #007aff;
             padding-bottom: 10px;
+        }
+        .header h1 {
+            color: #1d1d1f;
+            margin: 0;
+        }
+        .header-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
         }
         .app-grid {
             display: grid;
@@ -84,7 +95,10 @@
     </style>
 </head>
 <body>
-    <h1>William Keene Apps</h1>
+    <div class="header">
+        <img src="images/keene-logo.png" alt="Logo" class="header-icon">
+        <h1>William Keene Apps</h1>
+    </div>
     <p>Quality apps for Mac and iOS</p>
 
     <div class="app-grid">
