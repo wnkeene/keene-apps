@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CleanSuite for Xcode - Reclaim Disk Space from Xcode</title>
-    <meta name="description" content="CleanSuite for Xcode - Reclaim disk space by cleaning Xcode's derived data, caches, device symbols, and more. macOS app.">
+    <meta name="description" content="CleanSuite for Xcode - Reclaim disk space by cleaning Xcode's derived data, caches, device symbols, archives, obsolete simulators, and more. macOS app.">
     
     <!-- Open Graph -->
     <meta property="og:title" content="CleanSuite for Xcode - Reclaim Disk Space from Xcode">
-    <meta property="og:description" content="Reclaim disk space by cleaning Xcode's derived data, caches, device symbols, and more.">
+    <meta property="og:description" content="Reclaim disk space by cleaning Xcode's derived data, caches, device symbols, archives, obsolete simulators, and more.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wnkeene.github.io/keene-apps/cleansuite-for-xcode/">
     <meta property="og:image" content="https://wnkeene.github.io/keene-apps/images/cleanxcode-icon.png">
@@ -151,7 +151,7 @@
     </div>
 
     <h1>CleanSuite for Xcode</h1>
-    <p class="subtitle">Reclaim disk space by cleaning Xcode's derived data, caches, device symbols, and more.</p>
+    <p class="subtitle">Reclaim disk space by cleaning Xcode's derived data, caches, device symbols, archives, and more.</p>
 
     <div class="app-store-badge">
         <a href="https://apps.apple.com/app/cleansuite-for-xcode/id6757979813" target="_blank">
@@ -163,36 +163,37 @@
     
     <h2>Cleaning Targets</h2>
     <table>
-        <tr><th>Item</th><th>Description</th></tr>
-        <tr><td>DerivedData</td><td>Clears build data to force rebuilds</td></tr>
-        <tr><td>Xcode Cache</td><td>Removes module and symbol caches</td></tr>
-        <tr><td>SwiftPM Cache</td><td>Deletes Swift Package Manager caches</td></tr>
-        <tr><td>Simulator Cache</td><td>Clears simulator temp files</td></tr>
-        <tr><td>SwiftUI Previews</td><td>Removes preview simulator data</td></tr>
-        <tr><td>Archives</td><td>Deletes archives (dSYMs will be lost)</td></tr>
-        <tr><td>Device Symbols</td><td>Removes old debug symbols; latest protected</td></tr>
-        <tr><td>Simulator Runtimes</td><td>Deletes simulator OS images; active protected</td></tr>
-        <tr><td>Logs</td><td>Removes diagnostic reports</td></tr>
-        <tr><td>Obsolete Simulators</td><td>Removes simulators incompatible with current Xcode</td></tr>
+        <tr><th>Item</th><th>Description</th><th>Area</th></tr>
+        <tr><td>DerivedData</td><td>Clears build data to force rebuilds</td><td>Safe</td></tr>
+        <tr><td>Xcode Cache</td><td>Removes module, symbol, and stale documentation caches; active doc cache protected</td><td>Safe</td></tr>
+        <tr><td>SwiftPM Cache</td><td>Deletes Swift Package Manager caches</td><td>Safe</td></tr>
+        <tr><td>Simulator Cache</td><td>Clears simulator temp files</td><td>Safe</td></tr>
+        <tr><td>SwiftUI Previews</td><td>Removes preview simulator data</td><td>Safe</td></tr>
+        <tr><td>Archives</td><td>Select individual archives to clean; latest build per app protected; empty date folders swept automatically</td><td>Caution</td></tr>
+        <tr><td>Device Symbols</td><td>Select individual symbol sets to clean; latest per device model protected</td><td>Caution</td></tr>
+        <tr><td>Simulator Runtimes</td><td>Deletes simulator OS images; active runtimes protected</td><td>Caution</td></tr>
+        <tr><td>Logs</td><td>Removes diagnostic reports and crash logs</td><td>Caution</td></tr>
+        <tr><td>Obsolete Simulators</td><td>Removes simulator devices that can no longer run</td><td>Caution</td></tr>
     </table>
     
     <div class="feature-section">
         <h3>Presets</h3>
         <ul>
-            <li><strong>Quick Preset</strong> — Safe items only (DerivedData, caches, previews)</li>
-            <li><strong>Deep Preset</strong> — All items including archives, symbols, and runtimes</li>
+            <li><strong>Quick Preset</strong> — Safe items only (DerivedData, caches, previews). Obsolete Simulators: orphaned devices only.</li>
+            <li><strong>Deep Preset</strong> — All Safe items plus Runtimes, Logs, and Obsolete Simulators. Archives and Device Symbols open a detail panel for granular selection. Obsolete Simulators: orphaned devices plus all non-latest runtime devices, protecting the newest runtime per platform.</li>
         </ul>
     </div>
     
     <div class="feature-section">
         <h3>Safety Features</h3>
         <ul>
-            <li><strong>Trash</strong> — Deleted files are moved to the app's internal trash instead of being permanently removed</li>
-            <li><strong>Put Back</strong> — Restore files from trash individually or all at once</li>
-            <li><strong>Empty Trash</strong> — Permanently delete files only when you're ready</li>
-            <li><strong>Dry Run Mode</strong> — Preview what would be cleaned without actually deleting anything</li>
-            <li><strong>Xcode Running Warning</strong> — Alerts you before cleaning if Xcode is open</li>
-            <li><strong>Protected Items</strong> — Latest device symbols and active simulator runtimes are never deleted</li>
+            <li><strong>Trash First</strong> — All deletions go to Trash; nothing is permanently removed without your action</li>
+            <li><strong>Put Back</strong> — Restore individual items or all items at once from Settings</li>
+            <li><strong>Permanently Delete</strong> — Remove items from the Recently Cleaned list and Trash only when you're ready</li>
+            <li><strong>Protected Items</strong> — Latest archive per app, latest device symbols per device model, and active simulation runtimes are locked and cannot be selected</li>
+            <li><strong>Active Documentation Cache</strong> — Current Xcode's documentation cache is always preserved; only older versions are swept</li>
+            <li><strong>Dry Run Mode</strong> — Preview what would be cleaned without deleting anything</li>
+            <li><strong>Xcode Running Warning</strong> — Alerts you if Xcode is open before cleaning</li>
         </ul>
     </div>
     
@@ -206,11 +207,21 @@
     </div>
     
     <div class="feature-section">
+        <h3>Detail Panels</h3>
+        <ul>
+            <li><strong>Archives Panel</strong> — Tap Archives to browse all builds per app, see sizes, and pick exactly which to clean. Latest build per app shows a lock icon and cannot be selected.</li>
+            <li><strong>Device Symbols Panel</strong> — Tap Device Symbols to browse iOS, watchOS, tvOS, visionOS, and macOS symbol sets with sizes. Latest per device model is locked.</li>
+        </ul>
+    </div>
+
+    <div class="feature-section">
         <h3>Additional Features</h3>
         <ul>
-            <li><strong>Disk Space Scanning</strong> — Shows size of each category before cleaning</li>
-            <li><strong>Confirmation Sheet</strong> — Review selections before cleaning</li>
-            <li><strong>Cleaning Report</strong> — Shows what was cleaned and space freed</li>
+            <li><strong>Disk Space Scanning</strong> — Shows reclaimable size for each category before cleaning</li>
+            <li><strong>Free Disk Space Display</strong> — Current available disk space shown at a glance</li>
+            <li><strong>Confirmation Sheet</strong> — Review all selections and total space to be freed before committing</li>
+            <li><strong>Cleaning Report</strong> — Shows exactly what was cleaned and total space freed</li>
+            <li><strong>Open at Login</strong> — Optional launch-at-login for automated reminders</li>
             <li><strong>Donations</strong> — Optional tip jar to support development</li>
         </ul>
     </div>
