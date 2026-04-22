@@ -164,65 +164,56 @@
     <h2>Cleaning Targets</h2>
     <table>
         <tr><th>Item</th><th>Description</th><th>Area</th></tr>
-        <tr><td>DerivedData</td><td>Clears build data to force rebuilds</td><td>Safe</td></tr>
-        <tr><td>Xcode Cache</td><td>Removes module, symbol, and stale documentation caches; active doc cache protected</td><td>Safe</td></tr>
-        <tr><td>SwiftPM Cache</td><td>Deletes Swift Package Manager caches</td><td>Safe</td></tr>
-        <tr><td>Simulator Cache</td><td>Clears simulator temp files</td><td>Safe</td></tr>
-        <tr><td>SwiftUI Previews</td><td>Removes preview simulator data</td><td>Safe</td></tr>
-        <tr><td>Archives</td><td>Select individual archives to clean; latest build per app protected; empty date folders swept automatically</td><td>Caution</td></tr>
-        <tr><td>Device Symbols</td><td>Select individual symbol sets to clean; latest per device model protected</td><td>Caution</td></tr>
-        <tr><td>Simulator Runtimes</td><td>Deletes simulator OS images; active runtimes protected</td><td>Caution</td></tr>
-        <tr><td>Logs</td><td>Removes diagnostic reports and crash logs</td><td>Caution</td></tr>
-        <tr><td>Obsolete Simulators</td><td>Removes simulator devices that can no longer run</td><td>Caution</td></tr>
+        <tr><td>DerivedData</td><td>Per-project build products, indexes, and logs. Xcode rebuilds these on the next build.</td><td>Safe</td></tr>
+        <tr><td>Xcode Cache</td><td>Module caches and stale documentation caches from previous Xcode installs. The active documentation cache is always protected.</td><td>Safe</td></tr>
+        <tr><td>Old Documentation</td><td>Legacy DocSet bundles that newer Xcode versions no longer use.</td><td>Safe</td></tr>
+        <tr><td>Archives</td><td>Drill in to pick individual archives per app. The latest build per app is locked; empty date folders are swept automatically.</td><td>Manage</td></tr>
+        <tr><td>Device Symbols</td><td>Drill in to pick individual symbol sets across iOS, watchOS, tvOS, visionOS, and macOS. The latest symbols per device model are locked.</td><td>Manage</td></tr>
+        <tr><td>Runtimes</td><td>Read-only. Simulator OS images are system-owned and must be removed in Xcode ▸ Settings ▸ Components.</td><td>Manage</td></tr>
+        <tr><td>Obsolete Simulators</td><td>Simulator device registry entries whose runtime is missing or uninstalled. Clearing them declutters Xcode's run-destination picker.</td><td>Manage</td></tr>
     </table>
-    
+
     <div class="feature-section">
-        <h3>Presets</h3>
+        <h3>Single-Page Dashboard</h3>
         <ul>
-            <li><strong>Quick Preset</strong> — Safe items only (DerivedData, caches, previews). Obsolete Simulators: orphaned devices only.</li>
-            <li><strong>Deep Preset</strong> — All Safe items plus Runtimes, Logs, and Obsolete Simulators. Archives and Device Symbols open a detail panel for granular selection. Obsolete Simulators: orphaned devices plus all non-latest runtime devices, protecting the newest runtime per platform.</li>
+            <li><strong>Reclaimable Summary</strong> — One GroupBox at the top shows total reclaimable size split into Safe and Manage buckets, plus the last scan timestamp.</li>
+            <li><strong>Safe to Clean Section</strong> — One "Clean X.XX GB" button reclaims everything Xcode can regenerate on the next build.</li>
+            <li><strong>Manage Section</strong> — Per-row drill-downs for granular control where latest-build-per-target protection matters.</li>
+            <li><strong>Calm Toolbar</strong> — Just Refresh, a Help sheet, and an amber "Xcode is open" chip when Xcode is running.</li>
         </ul>
     </div>
-    
+
     <div class="feature-section">
-        <h3>Safety Features</h3>
+        <h3>Drill-Down Panels</h3>
         <ul>
-            <li><strong>Trash First</strong> — All deletions go to Trash; nothing is permanently removed without your action</li>
-            <li><strong>Put Back</strong> — Restore individual items or all items at once from Settings</li>
-            <li><strong>Permanently Delete</strong> — Remove items from the Recently Cleaned list and Trash only when you're ready</li>
-            <li><strong>Protected Items</strong> — Latest archive per app, latest device symbols per device model, and active simulation runtimes are locked and cannot be selected</li>
-            <li><strong>Active Documentation Cache</strong> — Current Xcode's documentation cache is always preserved; only older versions are swept</li>
-            <li><strong>Dry Run Mode</strong> — Preview what would be cleaned without deleting anything</li>
-            <li><strong>Xcode Running Warning</strong> — Alerts you if Xcode is open before cleaning</li>
+            <li><strong>DerivedData</strong> — Browse every per-project folder, sort by size, and reveal any row in Finder before trashing.</li>
+            <li><strong>Xcode Cache</strong> — See which subcaches are reclaimable (module, stale doc, symbol caches) with the active Xcode's documentation cache always protected.</li>
+            <li><strong>Old Documentation</strong> — Browse legacy DocSet folders and trash individual items.</li>
+            <li><strong>Archives</strong> — Browse all builds per app, see sizes, and pick exactly which to clean. Latest build per app is locked and cannot be selected.</li>
+            <li><strong>Device Symbols</strong> — Browse all symbol sets with Date + OS Build on each row. Latest per device model is locked.</li>
+            <li><strong>Obsolete Simulators</strong> — Review which registry entries will be swept; "Registry only" entries carry no disk cost but clean up Xcode's picker.</li>
         </ul>
     </div>
-    
+
     <div class="feature-section">
-        <h3>Reminders & Scheduling</h3>
+        <h3>Safety</h3>
         <ul>
-            <li><strong>Cleaning Reminders</strong> — Weekly, monthly, or quarterly notifications</li>
-            <li><strong>Snooze</strong> — Postpone reminder by 1 day, 3 days, or 1 week</li>
-            <li><strong>Overdue Alert</strong> — Shows days since last clean on app launch</li>
-        </ul>
-    </div>
-    
-    <div class="feature-section">
-        <h3>Detail Panels</h3>
-        <ul>
-            <li><strong>Archives Panel</strong> — Tap Archives to browse all builds per app, see sizes, and pick exactly which to clean. Latest build per app shows a lock icon and cannot be selected.</li>
-            <li><strong>Device Symbols Panel</strong> — Tap Device Symbols to browse iOS, watchOS, tvOS, visionOS, and macOS symbol sets with sizes. Latest per device model is locked.</li>
+            <li><strong>Xcode-Open Block</strong> — Cleaning is refused whenever Xcode is running. The amber "Xcode is open" chip in the toolbar makes this obvious; quit Xcode and scan again.</li>
+            <li><strong>Trash First</strong> — Every deletion goes to the Trash. Nothing is permanently removed until you empty the Trash yourself.</li>
+            <li><strong>Protected Latest Builds</strong> — Latest archive per app and latest Device Symbols per device model are locked and cannot be selected.</li>
+            <li><strong>Active Documentation Cache</strong> — The current Xcode's documentation cache is always preserved; only older versions are swept.</li>
+            <li><strong>Sandbox-First</strong> — The app runs fully sandboxed. Security-scoped bookmarks to your Developer folder are the only way it sees any of your data.</li>
         </ul>
     </div>
 
     <div class="feature-section">
         <h3>Additional Features</h3>
         <ul>
-            <li><strong>Disk Space Scanning</strong> — Shows reclaimable size for each category before cleaning</li>
-            <li><strong>Free Disk Space Display</strong> — Current available disk space shown at a glance</li>
-            <li><strong>Confirmation Sheet</strong> — Review all selections and total space to be freed before committing</li>
-            <li><strong>Cleaning Report</strong> — Shows exactly what was cleaned and total space freed</li>
-            <li><strong>Open at Login</strong> — Optional launch-at-login for automated reminders</li>
-            <li><strong>Donations</strong> — Optional tip jar to support development</li>
+            <li><strong>Custom DerivedData & Archives Paths</strong> — Point CleanSuite at non-default locations from Settings; access is remembered via a sandbox bookmark.</li>
+            <li><strong>Reveal in Finder</strong> — Every drill-down row has a Reveal button so you can inspect the folder before trashing it.</li>
+            <li><strong>Scan Freshness</strong> — The Reclaimable summary shows when the last scan ran so you know what you're looking at.</li>
+            <li><strong>Open at Login</strong> — Optional launch-at-login toggle in Settings.</li>
+            <li><strong>Tip Jar</strong> — CleanSuite is free. A soft "Leave a Tip" card on the dashboard supports ongoing development.</li>
         </ul>
     </div>
     
