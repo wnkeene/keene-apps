@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolorz - Native Mac Color Picker</title>
+    <meta name="description" content="Kolorz - Pick any color on screen and copy it as HEX, RGB, HSL, SwiftUI, or NSColor. Paste any value to convert. 100% native macOS color picker.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kolorz - Native Mac Color Picker">
+    <meta property="og:description" content="Pick any color on screen and copy it as HEX, RGB, HSL, SwiftUI, or NSColor. Paste any value to convert.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wnkeene.github.io/keene-apps/kolorz/">
+    <meta property="og:image" content="https://wnkeene.github.io/keene-apps/images/kolorz-icon.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Kolorz">
+    <meta name="twitter:description" content="Native Mac color picker. HEX, RGB, HSL, SwiftUI, NSColor — pick, paste, convert.">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #f5f5f7;
+        }
+        h1 {
+            color: #1d1d1f;
+            border-bottom: 2px solid #007aff;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #1d1d1f;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #424245;
+        }
+        ul {
+            line-height: 1.8;
+        }
+        strong {
+            color: #1d1d1f;
+        }
+        a {
+            color: #007aff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .subtitle {
+            color: #6e6e73;
+            font-size: 1.2em;
+            margin-top: -10px;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #d2d2d7;
+            color: #6e6e73;
+            font-size: 0.9em;
+        }
+        .back-link {
+            margin-bottom: 20px;
+        }
+        .app-icon {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .app-icon img {
+            border-radius: 22px;
+        }
+        .app-store-badge {
+            text-align: center;
+            margin: 25px 0;
+            color: #6e6e73;
+            font-style: italic;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px 12px;
+            border-bottom: 1px solid #d2d2d7;
+        }
+        th {
+            background: #e8e8ed;
+        }
+        td code {
+            font-family: "SF Mono", Menlo, Monaco, Consolas, monospace;
+            font-size: 0.9em;
+            background: #f5f5f7;
+            padding: 1px 6px;
+            border-radius: 4px;
+        }
+        .feature-section {
+            margin: 25px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+        }
+        .feature-section h3 {
+            margin-top: 0;
+        }
+        .link-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .link-row a, .link-row button {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none !important;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .link-row a:hover, .link-row button:hover { opacity: 0.8; }
+        .link-row svg { flex-shrink: 0; }
+        kbd {
+            font-family: "SF Mono", Menlo, Monaco, Consolas, monospace;
+            font-size: 0.9em;
+            background: #e8e8ed;
+            border: 1px solid #d2d2d7;
+            border-radius: 4px;
+            padding: 1px 6px;
+            color: #1d1d1f;
+        }
+        @media (prefers-color-scheme: dark) {
+            body { background-color: #1c1c1e; color: #f5f5f7; }
+            h1 { color: #f5f5f7; }
+            h2 { color: #f5f5f7; }
+            h3 { color: #d1d1d6; }
+            strong { color: #f5f5f7; }
+            .subtitle { color: #98989d; }
+            .footer { border-top-color: #38383a; color: #98989d; }
+            .feature-section { background: #2c2c2e; }
+            .app-store-badge { color: #98989d; }
+
+            table { background: #2c2c2e; color: #f5f5f7; }
+            th { background: #3a3a3c; color: #f5f5f7; }
+            td { color: #e5e5e7; }
+            th, td { border-bottom-color: #48484a; }
+            td code { background: #1c1c1e; color: #f5f5f7; }
+
+            kbd { background: #3a3a3c; border-color: #48484a; color: #f5f5f7; }
+        }
+    </style>
+</head>
+<body>
+    <p class="back-link"><a href="../">← Back to All Apps</a></p>
+
+    <div class="app-icon">
+        <img src="../images/kolorz-icon.png" alt="Kolorz App Icon" width="120" height="120">
+    </div>
+
+    <h1>Kolorz</h1>
+    <p class="subtitle">Native pixel &amp; code magnifier — pick, copy, and convert HEX, RGB, HSL, SwiftUI, and NSColor.</p>
+
+    <div class="app-store-badge">
+        <p>Coming soon to the Mac App Store</p>
+    </div>
+
+    <p><strong>Platform:</strong> macOS 15.6+</p>
+
+    <h2>What It Does</h2>
+    <p>Kolorz is the simplest way to pick a color on macOS and copy it in the format you actually need. It uses Apple&rsquo;s built-in color picker &mdash; the same one you already know from Pages, Keynote, and Preview &mdash; and adds the one thing it has always been missing: every color value, ready to copy.</p>
+
+    <h2>Output Formats</h2>
+    <table>
+        <tr><th>Format</th><th>Example</th></tr>
+        <tr><td>HEX</td><td><code>#FF6B35</code></td></tr>
+        <tr><td>RGB</td><td><code>rgb(255, 107, 53)</code></td></tr>
+        <tr><td>HSL</td><td><code>hsl(16°, 100%, 60%)</code></td></tr>
+        <tr><td>SwiftUI</td><td><code>Color(red: 1.00, green: 0.42, blue: 0.21)</code></td></tr>
+        <tr><td>NSColor</td><td><code>NSColor(srgbRed: 1.00, green: 0.42, blue: 0.21, alpha: 1.0)</code></td></tr>
+    </table>
+
+    <div class="feature-section">
+        <h3>Pick</h3>
+        <ul>
+            <li><strong>Eyedropper</strong> &mdash; Click any pixel on screen with the system magnifier loupe.</li>
+            <li><strong>Color Wheel, Sliders, Palettes</strong> &mdash; Every native macOS picking tool, in one window.</li>
+            <li><strong>Image Samplers</strong> &mdash; Pull palettes from any image you drop in.</li>
+        </ul>
+    </div>
+
+    <div class="feature-section">
+        <h3>Copy</h3>
+        <ul>
+            <li><strong>One-Click Copy</strong> &mdash; Click the copy icon on any row to put that format on your clipboard.</li>
+            <li><strong>Drag &amp; Drop</strong> &mdash; Drag the color preview straight into Sketch, Figma, Xcode, or any app that accepts color drops.</li>
+        </ul>
+    </div>
+
+    <div class="feature-section">
+        <h3>Paste to Convert</h3>
+        <ul>
+            <li><strong>Bidirectional Conversion</strong> &mdash; Paste any color value into any row and press <kbd>Return</kbd>. Kolorz parses it, applies it to the picker, and updates every other format.</li>
+            <li><strong>Round-Trip Accurate</strong> &mdash; Works with HEX (including 3-character shorthand like <code>#FFF</code>), RGB, HSL, SwiftUI <code>Color</code> literals, and <code>NSColor</code> literals. No precision loss.</li>
+        </ul>
+    </div>
+
+    <div class="feature-section">
+        <h3>Pin on Top</h3>
+        <ul>
+            <li><strong>Floating Window</strong> &mdash; Toggle the pin in the toolbar to keep Kolorz floating above every other app. The picker follows.</li>
+            <li><strong>Persistent</strong> &mdash; The pinned state is remembered between launches.</li>
+        </ul>
+    </div>
+
+    <div class="feature-section">
+        <h3>Keyboard Shortcuts</h3>
+        <ul>
+            <li><kbd>⌘1</kbd> &mdash; Copy HEX</li>
+            <li><kbd>⌘2</kbd> &mdash; Copy RGB</li>
+            <li><kbd>⌘3</kbd> &mdash; Copy HSL</li>
+            <li><kbd>⌘4</kbd> &mdash; Copy SwiftUI</li>
+            <li><kbd>⌘5</kbd> &mdash; Copy NSColor</li>
+            <li><kbd>⇧⌘C</kbd> &mdash; Show color picker</li>
+        </ul>
+        <p>Every shortcut is remappable in <strong>System Settings ▸ Keyboard ▸ Keyboard Shortcuts ▸ App Shortcuts</strong>.</p>
+    </div>
+
+    <div class="feature-section">
+        <h3>100% Native</h3>
+        <ul>
+            <li><strong>No Electron</strong> &mdash; Pure SwiftUI &amp; AppKit. Built on the system color picker.</li>
+            <li><strong>No Tracking</strong> &mdash; Kolorz does not collect any data. Your colors never leave your Mac.</li>
+            <li><strong>Sandboxed</strong> &mdash; Runs fully sandboxed on the Mac App Store.</li>
+        </ul>
+    </div>
+
+    <h2>Support</h2>
+    <p>For questions, feedback, or support requests:</p>
+    <p><strong>Email:</strong> <a href="mailto:wnkeene082@gmail.com">wnkeene082@gmail.com</a></p>
+
+    <h2>Privacy</h2>
+    <p>Kolorz respects your privacy. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+
+    <h2>Share</h2>
+    <div class="link-row">
+        <a href="https://twitter.com/intent/tweet?text=Check%20out%20Kolorz%20%E2%80%94%20native%20Mac%20color%20picker%20with%20HEX%2C%20RGB%2C%20HSL%2C%20SwiftUI%2C%20NSColor!&url=https://wnkeene.github.io/keene-apps/kolorz/" target="_blank" rel="noopener" style="background:#000;color:#fff"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>Post</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://wnkeene.github.io/keene-apps/kolorz/" target="_blank" rel="noopener" style="background:#1877F2;color:#fff"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Share</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://wnkeene.github.io/keene-apps/kolorz/" target="_blank" rel="noopener" style="background:#0A66C2;color:#fff"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+        <a href="mailto:?subject=Check%20out%20Kolorz&body=Kolorz%20%E2%80%94%20native%20Mac%20color%20picker.%0A%0Ahttps://wnkeene.github.io/keene-apps/kolorz/" style="background:#34C759;color:#fff"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/><path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/></svg>Email</a>
+        <button onclick="navigator.clipboard.writeText('https://wnkeene.github.io/keene-apps/kolorz/'); this.querySelector('span').textContent='Copied!';" style="background:#6e6e73;color:#fff"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M7.5 3.375c0-1.036.84-1.875 1.875-1.875h.375a3.75 3.75 0 013.75 3.75v1.875C13.5 8.161 14.34 9 15.375 9h1.875A3.75 3.75 0 0121 12.75v3.375c0 1.035-.84 1.875-1.875 1.875H9.375A1.875 1.875 0 017.5 16.125V3.375z"/><path d="M15 5.25a5.23 5.23 0 00-1.279-3.434 9.768 9.768 0 016.963 6.963A5.23 5.23 0 0017.25 7.5h-1.875A.375.375 0 0115 7.125V5.25zM4.875 6H6v10.125A3.375 3.375 0 009.375 19.5H16.5v1.125c0 1.035-.84 1.875-1.875 1.875h-8.25A1.875 1.875 0 014.5 20.625V7.875C4.5 6.839 5.34 6 6.375 6h-1.5z"/></svg><span>Copy Link</span></button>
+    </div>
+
+    <div class="footer">
+        <p><a href="../">← Back to All Apps</a></p>
+        <p>© 2026 William Keene. All rights reserved.</p>
+    </div>
+</body>
+</html>
