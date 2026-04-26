@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kolorz - Native Mac Color Picker</title>
-    <meta name="description" content="Kolorz - Pick any color on screen and copy it as HEX, RGB, or HSL. Paste any value to convert. 100% native macOS color picker.">
+    <meta name="description" content="Kolorz - Native Mac color picker with menu bar access. Pick any pixel from anywhere with a global shortcut, copy as HEX, RGB, or HSL, and keep a history of recent colors.">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Kolorz - Native Mac Color Picker">
-    <meta property="og:description" content="Pick any color on screen and copy it as HEX, RGB, or HSL. Paste any value to convert.">
+    <meta property="og:description" content="Pick any pixel from anywhere with a global shortcut. Copy as HEX, RGB, or HSL. Recent color history, menu bar access, stay on top.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wnkeene.github.io/keene-apps/kolorz/">
     <meta property="og:image" content="https://wnkeene.github.io/keene-apps/images/kolorz-icon.png">
@@ -16,7 +16,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Kolorz">
-    <meta name="twitter:description" content="Native Mac color picker. HEX, RGB, HSL — pick, paste, convert.">
+    <meta name="twitter:description" content="Native Mac color picker. Pick from anywhere, copy HEX/RGB/HSL, recent color history, menu bar access.">
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -170,12 +170,12 @@
     </div>
 
     <h1>Kolorz</h1>
-    <p class="subtitle">Native Mac color picker &mdash; pick, copy, and convert HEX, RGB, and HSL.</p>
+    <p class="subtitle">Native Mac color picker &mdash; pick from anywhere, copy HEX, RGB, and HSL, with menu bar access and recent color history.</p>
 
     <p><strong>Platform:</strong> macOS 14.0+</p>
 
     <h2>What It Does</h2>
-    <p>Kolorz is the simplest way to pick a color on macOS and copy it in the format you actually need. It uses Apple&rsquo;s built-in color picker &mdash; the same one you already know from Pages, Keynote, and Preview &mdash; and adds the one thing it has always been missing: every color value, ready to copy.</p>
+    <p>Kolorz is the simplest way to pick a color on macOS and copy it in the format you actually need. It uses Apple&rsquo;s built-in color picker &mdash; the same one you already know from Pages, Keynote, and Preview &mdash; and adds the things it has always been missing: every color value ready to copy, a global eyedropper shortcut, recent color history, and menu bar access.</p>
 
     <h2>Output Formats</h2>
     <table>
@@ -186,8 +186,18 @@
     </table>
 
     <div class="feature-section">
-        <h3>Pick</h3>
+        <h3>Menu Bar Access</h3>
         <ul>
+            <li><strong>Always One Click Away</strong> &mdash; The menu bar icon gives you instant access to the eyedropper, current color, and recent history from any app.</li>
+            <li><strong>Pick Color Button</strong> &mdash; Launch the system eyedropper directly from the popover.</li>
+            <li><strong>Quick Actions</strong> &mdash; Open the full color panel, clear history, or access settings from the overflow menu.</li>
+        </ul>
+    </div>
+
+    <div class="feature-section">
+        <h3>Pick from Anywhere</h3>
+        <ul>
+            <li><strong>Global Shortcut</strong> &mdash; Press <kbd>⌥⌘C</kbd> from any app to launch the eyedropper. No need to switch to Kolorz first. The shortcut is fully customizable in Settings.</li>
             <li><strong>Eyedropper</strong> &mdash; Click any pixel on screen with the system magnifier loupe.</li>
             <li><strong>Color Wheel, Sliders, Palettes</strong> &mdash; Every native macOS picking tool, in one window.</li>
             <li><strong>Image Samplers</strong> &mdash; Pull palettes from any image you drop in.</li>
@@ -195,10 +205,19 @@
     </div>
 
     <div class="feature-section">
+        <h3>Recent Colors</h3>
+        <ul>
+            <li><strong>Automatic History</strong> &mdash; Every color you sample is saved to a persistent history of your last 24 colors.</li>
+            <li><strong>One-Click Recall</strong> &mdash; Click any recent swatch to set it as the current color.</li>
+            <li><strong>Drag to Swatches</strong> &mdash; Drag any recent color directly into the color panel&rsquo;s swatch grid to save it permanently.</li>
+        </ul>
+    </div>
+
+    <div class="feature-section">
         <h3>Copy</h3>
         <ul>
             <li><strong>One-Click Copy</strong> &mdash; Click the copy icon on any row to put that format on your clipboard.</li>
-            <li><strong>Drag &amp; Drop</strong> &mdash; Drag the color preview straight into Sketch, Figma, Xcode, or any app that accepts color drops.</li>
+            <li><strong>Drag &amp; Drop</strong> &mdash; Drag recent colors straight into Sketch, Figma, Xcode, or any app that accepts color drops.</li>
         </ul>
     </div>
 
@@ -206,26 +225,29 @@
         <h3>Paste to Convert</h3>
         <ul>
             <li><strong>Bidirectional Conversion</strong> &mdash; Paste any color value into any row and press <kbd>Return</kbd>. Kolorz parses it, applies it to the picker, and updates every other format.</li>
+            <li><strong>Modern CSS Syntax</strong> &mdash; Accepts both legacy comma-separated (<code>rgb(255, 107, 53)</code>) and modern space-separated (<code>rgb(255 107 53)</code>) CSS syntax.</li>
             <li><strong>Round-Trip Accurate</strong> &mdash; Works with HEX (including 3-character shorthand like <code>#FFF</code>), RGB, and HSL. No precision loss.</li>
         </ul>
     </div>
 
     <div class="feature-section">
-        <h3>Pin on Top</h3>
+        <h3>Settings</h3>
         <ul>
-            <li><strong>Floating Window</strong> &mdash; Toggle the pin in the toolbar to keep Kolorz floating above every other app. The picker follows.</li>
-            <li><strong>Persistent</strong> &mdash; The pinned state is remembered between launches.</li>
+            <li><strong>Stay on Top</strong> &mdash; Keep the color panel floating above every other app. Persistent between launches.</li>
+            <li><strong>Launch at Login</strong> &mdash; Start Kolorz automatically when you log in.</li>
+            <li><strong>Custom Shortcut</strong> &mdash; Remap the global eyedropper shortcut to any key combination you prefer.</li>
         </ul>
     </div>
 
     <div class="feature-section">
         <h3>Keyboard Shortcuts</h3>
         <ul>
+            <li><kbd>⌥⌘C</kbd> &mdash; Pick Color (global &mdash; works from any app, customizable)</li>
+            <li><kbd>⇧⌘P</kbd> &mdash; Pick Color (in-app)</li>
             <li><kbd>⌘1</kbd> &mdash; Copy HEX</li>
             <li><kbd>⌘2</kbd> &mdash; Copy RGB</li>
             <li><kbd>⌘3</kbd> &mdash; Copy HSL</li>
         </ul>
-        <p>Every shortcut is remappable in <strong>System Settings ▸ Keyboard ▸ Keyboard Shortcuts ▸ App Shortcuts</strong>.</p>
     </div>
 
     <div class="feature-section">
