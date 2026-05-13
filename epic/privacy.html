@@ -58,80 +58,89 @@
         .back-link {
             margin-bottom: 20px;
         }
+        @media (prefers-color-scheme: dark) {
+            body { background-color: #1c1c1e; color: #f5f5f7; }
+            h1 { color: #f5f5f7; }
+            h2 { color: #f5f5f7; }
+            strong { color: #f5f5f7; }
+            .subtitle { color: #98989d; }
+            .highlight { background: #2c2c2e; }
+            .footer { border-top-color: #38383a; color: #98989d; }
+        }
     </style>
 </head>
 <body>
     <p class="back-link"><a href="./">← Back to EPIC</a></p>
 
     <h1>Privacy Policy</h1>
-    <p class="subtitle">EPIC — NASA Image Viewer</p>
-    <p><em>Last updated: April 2, 2026</em></p>
+    <p class="subtitle">EPIC - NASA Image Viewer</p>
+    <p><em>Last updated: May 12, 2026</em></p>
 
     <div class="highlight">
-        <p><strong>Simple Summary:</strong> EPIC does not collect, store, transmit, or share any of your personal information. All data stays on your device.</p>
+        <p><strong>Simple Summary:</strong> EPIC does not use analytics, advertising, or third-party tracking SDKs. The app stores favorites, download history, and cached APOD data using Apple's system frameworks, and that data may sync through your private iCloud account when CloudKit is available.</p>
     </div>
 
-    <h2>Information Collection and Use</h2>
-    <p>EPIC is designed with your privacy in mind. We do not collect any personal information from users of the app. EPIC does not use third-party analytics or advertising SDKs.</p>
+    <h2>Overview</h2>
+    <p>EPIC is a universal app for browsing NASA imagery and video. It can show the Astronomy Picture of the Day, NASA archive search results, Mars rover imagery, Earth imagery from NASA's EPIC service, and NASA TV streams. This policy explains what data the app uses, where that data is stored, and what network services are involved.</p>
 
-    <h2>NASA API Usage</h2>
-    <p>EPIC fetches publicly available data from NASA's open APIs, including the Astronomy Picture of the Day (APOD), NASA Image Library, and EPIC Earth imagery. These requests are made directly to NASA's servers over HTTPS. No personal information is sent with these requests beyond what is standard in an HTTP connection (such as your IP address, which is handled by NASA's servers according to their own privacy policy).</p>
-
-    <h2>NASA TV Streaming</h2>
-    <p>EPIC can stream live NASA TV broadcasts. The app fetches a small configuration file from our servers to obtain current stream URLs. This request contains no personal data — only a standard HTTPS fetch. The video streams are served directly by NASA's content delivery network.</p>
-
-    <h2>Data Storage</h2>
-    <p>The app stores the following data <strong>locally on your device only</strong>:</p>
+    <h2>Information We Do Not Collect</h2>
+    <p><strong>We do not collect personal information for analytics, advertising, or tracking.</strong> Specifically, EPIC does not use:</p>
     <ul>
-        <li>Your favorited images (stored via Apple's SwiftData framework)</li>
-        <li>Cached images for faster browsing (stored in the app's temporary cache)</li>
-        <li>Cached NASA TV stream URLs (stored via Apple's standard UserDefaults)</li>
+        <li>Advertising SDKs</li>
+        <li>Third-party analytics services</li>
+        <li>Cross-app or cross-site tracking</li>
+        <li>Developer-run user accounts</li>
     </ul>
-    <p>This data never leaves your device and is not accessible to us or any third parties.</p>
 
-    <h2>Downloads</h2>
-    <p>When you download images, they are saved to your device's Downloads folder (Mac) or through the system Files picker (iPhone and iPad). Downloaded files remain entirely under your control and are not tracked by the app.</p>
+    <h2>NASA APIs and Streaming</h2>
+    <p>EPIC requests publicly available content from NASA services over HTTPS, including the Astronomy Picture of the Day API, NASA's image and video archive, Earth imagery endpoints, and NASA video streams. When the app contacts NASA, those requests go directly from your device to NASA or NASA's content delivery providers. As with any internet request, those services may receive standard network information such as your IP address according to their own policies.</p>
+
+    <h2>Remote Configuration for NASA TV</h2>
+    <p>To keep NASA TV channels current, EPIC fetches a small configuration file from our website. That request contains no account information, no advertising identifiers, and no app-specific personal profile data. The configuration is cached locally on your device using Apple's standard preferences system.</p>
+
+    <h2>Local Storage and Private iCloud Sync</h2>
+    <p>EPIC stores app data using Apple's SwiftData framework. Depending on your device and iCloud availability, this data may remain local to the device or may sync through your <strong>private</strong> iCloud database using CloudKit.</p>
+    <p>This stored data can include:</p>
+    <ul>
+        <li>Your favorites library</li>
+        <li>Download history and related metadata</li>
+        <li>Cached Astronomy Picture of the Day entries</li>
+        <li>Cached NASA TV channel configuration</li>
+    </ul>
+    <p>Private CloudKit data is associated with your Apple Account and is not shared publicly. We do not use it for profiling or advertising, and we cannot browse it like a public analytics database.</p>
+
+    <h2>Downloads and Files</h2>
+    <p>When you save media from EPIC, the file is written to a location you choose using Apple's system file interfaces. On Mac, EPIC opens a save panel that defaults to your Downloads folder. On iPhone and iPad, the system file exporter lets you choose where the file is stored. Downloaded files remain under your control.</p>
+
+    <h2>In-App Purchases</h2>
+    <p>EPIC offers a 7-day trial and an optional Lifetime Unlock. Purchases, receipts, and restore operations are processed by Apple's App Store and StoreKit. We do not receive your full payment card details.</p>
 
     <h2>No Analytics or Tracking</h2>
-    <p>EPIC does not use:</p>
-    <ul>
-        <li>Analytics services</li>
-        <li>Crash reporting tools</li>
-        <li>Advertising networks</li>
-        <li>Tracking technologies</li>
-        <li>Third-party SDKs that collect data</li>
-    </ul>
+    <p>EPIC does not use analytics services, advertising networks, or third-party tracking technologies. The app's privacy manifest declares that tracking is disabled.</p>
 
     <h2>No Account Required</h2>
-    <p>EPIC does not require you to create an account, provide an email address, or share any personal information to use the app.</p>
-
-    <h2>Children's Privacy</h2>
-    <p>Because we do not collect any information, our app is safe for users of all ages, including children under 13.</p>
+    <p>You do not need to create an EPIC account, provide a password, or sign in to a developer-managed service to browse content in the app.</p>
 
     <h2>Data Security</h2>
-    <p>Since no personal data is transmitted from your device to our servers, there is no risk of data breaches or unauthorized access to your information through our app. All network communication uses HTTPS encryption.</p>
+    <p>Network requests used by EPIC are made over HTTPS. Any synced private app data relies on Apple's iCloud and CloudKit infrastructure associated with your Apple Account.</p>
 
-    <h2>Your Rights</h2>
-    <p>You have complete control over your data:</p>
+    <h2>Your Control</h2>
     <ul>
-        <li><strong>Access:</strong> Your favorites and cache are stored locally and never shared</li>
-        <li><strong>Deletion:</strong> Simply delete the app to remove all local data</li>
-        <li><strong>Downloads:</strong> Files you download are saved to standard system locations you control</li>
-        <li><strong>Control:</strong> You can remove individual favorites at any time within the app</li>
+        <li><strong>Favorites:</strong> You can remove favorites from within the app at any time.</li>
+        <li><strong>Downloads:</strong> Files you save remain in the location you selected and can be managed like any other file on your device.</li>
+        <li><strong>Local app data:</strong> Removing the app removes its local data from that device.</li>
+        <li><strong>iCloud data:</strong> If iCloud sync is enabled for EPIC, related private app data is tied to your Apple Account and managed through Apple's iCloud systems.</li>
     </ul>
 
+    <h2>Children's Privacy</h2>
+    <p>EPIC does not knowingly collect personal information from children. Because the app does not use advertising, analytics, or developer-run accounts, it is designed to minimize data collection for all users.</p>
+
     <h2>Changes to This Policy</h2>
-    <p>If we update this privacy policy, we will post the new policy on this page with an updated effective date.</p>
-
-    <h2>California Privacy Rights (CCPA)</h2>
-    <p>California residents have the right to know what personal information is collected. For EPIC: <strong>No personal information is collected, sold, or shared.</strong></p>
-
-    <h2>GDPR Compliance</h2>
-    <p>For users in the European Union, EPIC complies with GDPR because we do not process any personal data.</p>
+    <p>If we update this privacy policy, we will post the updated version on this page and revise the effective date above.</p>
 
     <h2>Contact</h2>
-    <p>If you have questions about this privacy policy, please contact:</p>
-    <p><strong>Email:</strong> <a href="mailto:wnkeene082@gmail.com">wnkeene082@gmail.com</a></p>
+    <p>If you have questions about this privacy policy, please use our feedback form:</p>
+    <p><strong>Feedback:</strong> <a href="https://forms.gle/eumYfYn8RzG9ctYp8" target="_blank" rel="noopener">Keene Apps feedback form</a></p>
 
     <div class="footer">
         <p><a href="./">← Back to EPIC</a> | <a href="../">All Apps</a></p>

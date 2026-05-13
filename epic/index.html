@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EPIC - NASA Image Viewer</title>
-    <meta name="description" content="EPIC - Browse NASA's stunning imagery. Picture of the Day, Mars rovers, Earth from space, and more.">
+    <meta name="description" content="EPIC lets you browse APOD, explore Mars rover photos and Earth imagery, search NASA's media archive, watch NASA TV, save favorites, and download images.">
 
     <!-- Open Graph -->
     <meta property="og:title" content="EPIC - NASA Image Viewer">
-    <meta property="og:description" content="Browse NASA's stunning imagery on iPhone, iPad, Mac, and Apple Vision Pro.">
+    <meta property="og:description" content="Browse APOD, Mars rover photos, Earth imagery, NASA TV, and NASA's media archive on iPhone, iPad, Mac, and Apple Vision Pro.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wnkeene.github.io/keene-apps/epic/">
     <meta property="og:image" content="https://wnkeene.github.io/keene-apps/images/epic-icon.png">
@@ -16,7 +16,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="EPIC - NASA Image Viewer">
-    <meta name="twitter:description" content="Browse NASA's stunning imagery on iPhone, iPad, Mac, and Apple Vision Pro.">
+    <meta name="twitter:description" content="Browse APOD, Mars rover photos, Earth imagery, NASA TV, and NASA's media archive on iPhone, iPad, Mac, and Apple Vision Pro.">
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -57,6 +57,10 @@
             font-size: 1.2em;
             margin-top: -10px;
         }
+        .platform-line {
+            color: #1d1d1f;
+            font-weight: 600;
+        }
         .footer {
             margin-top: 40px;
             padding-top: 20px;
@@ -73,6 +77,15 @@
         }
         .app-icon img {
             border-radius: 22px;
+        }
+        .feature-section {
+            margin: 25px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+        }
+        .feature-section h3 {
+            margin-top: 0;
         }
         .link-row {
             display: flex;
@@ -103,8 +116,9 @@
             h3 { color: #d1d1d6; }
             strong { color: #f5f5f7; }
             .subtitle { color: #98989d; }
+            .platform-line { color: #f5f5f7; }
             .footer { border-top-color: #38383a; color: #98989d; }
-
+            .feature-section { background: #2c2c2e; }
         }
     </style>
 </head>
@@ -116,37 +130,82 @@
     </div>
 
     <h1>EPIC</h1>
-    <p class="subtitle">NASA Image Viewer for iPhone, iPad, Mac, and Apple Vision Pro</p>
+    <p class="subtitle">Browse NASA's best images, videos, and live streams from one universal app.</p>
 
-    <h2>About</h2>
-    <p>EPIC brings NASA's vast image archives to your fingertips. Browse the Astronomy Picture of the Day, explore Mars rover photography, view Earth from space through NASA's EPIC camera, stream NASA TV, and search the entire NASA Image Library — all from a single, beautifully designed universal app.</p>
+    <p class="platform-line"><strong>Platform:</strong> iOS 26.0+ &bull; iPadOS 26.0+ &bull; macOS 26.0+ &bull; visionOS 26.0+</p>
 
-    <h2>Features</h2>
-    <ul>
-        <li><strong>Picture of the Day</strong> — View today's featured image or browse by date, plus discover random selections from NASA's archive</li>
-        <li><strong>Explore</strong> — Browse curated categories including Mars rovers, Earth from space, galaxies, nebulae, the Solar System, the ISS, and more</li>
-        <li><strong>NASA TV</strong> — Stream live NASA broadcasts and events directly in the app</li>
-        <li><strong>Search</strong> — Search the full NASA Image Library for any topic — galaxies, missions, astronauts, and beyond</li>
-        <li><strong>Favorites</strong> — Save your favorite images to a personal library</li>
-        <li><strong>Zoomable Viewer</strong> — Tap any image for a full-screen, zoomable viewing experience</li>
-        <li><strong>Downloads</strong> — Save high-resolution images to your Mac Downloads folder or iOS Files app</li>
-        <li><strong>Universal App</strong> — Works on iPhone, iPad, Mac, and Apple Vision Pro</li>
-    </ul>
+    <h2>What It Does</h2>
+    <p>EPIC brings NASA's public imagery and video services together in one place. You can check today's Astronomy Picture of the Day, browse Earth imagery from NASA's EPIC camera, explore Mars rover photography, search NASA's image and video archive, watch live NASA TV when broadcasts are active, and save favorites for later.</p>
+
+    <div class="feature-section">
+        <h3>Daily NASA Browsing</h3>
+        <ul>
+            <li><strong>Today</strong> &mdash; View the Astronomy Picture of the Day, jump to other dates, or discover random picks from NASA's archive.</li>
+            <li><strong>Explore</strong> &mdash; Browse curated sections for Mars, Earth, galaxies, nebulae, the ISS, the Solar System, and more.</li>
+            <li><strong>Detail View</strong> &mdash; Open any item for a larger view, metadata, sharing, and download options.</li>
+        </ul>
+    </div>
+
+    <div class="feature-section">
+        <h3>Search, Save, and Download</h3>
+        <ul>
+            <li><strong>Search NASA's Media Archive</strong> &mdash; Search NASA's public image and video library for missions, astronauts, planets, launches, and more.</li>
+            <li><strong>Favorites</strong> &mdash; Save images and videos to your personal library for quick access later.</li>
+            <li><strong>Downloads</strong> &mdash; Save standard or higher resolution media when the source asset is available.</li>
+        </ul>
+    </div>
+
+    <div class="feature-section">
+        <h3>NASA TV and Video</h3>
+        <ul>
+            <li><strong>Live NASA TV</strong> &mdash; Watch NASA TV streams directly in the app when a live broadcast is active.</li>
+            <li><strong>On Demand</strong> &mdash; Browse NASA videos by topic such as Artemis, James Webb, ISS spacewalks, launches, and press events.</li>
+            <li><strong>Universal Experience</strong> &mdash; EPIC is designed for iPhone, iPad, Mac, and Apple Vision Pro.</li>
+        </ul>
+    </div>
 
     <h2>Platform Support</h2>
     <ul>
-        <li><strong>iPhone</strong> — iOS 18.0+</li>
-        <li><strong>iPad</strong> — iPadOS 18.0+</li>
-        <li><strong>Mac</strong> — macOS 15.0+</li>
-        <li><strong>Apple Vision Pro</strong> — visionOS 2.0+</li>
+        <li><strong>iPhone</strong> &mdash; iOS 26.0+</li>
+        <li><strong>iPad</strong> &mdash; iPadOS 26.0+</li>
+        <li><strong>Mac</strong> &mdash; macOS 26.0+</li>
+        <li><strong>Apple Vision Pro</strong> &mdash; visionOS 26.0+</li>
+    </ul>
+
+    <h2>Purchase</h2>
+    <ul>
+        <li><strong>7-day free trial</strong> &mdash; New users begin with a 7-day free trial.</li>
+        <li><strong>Lifetime Unlock</strong> &mdash; EPIC offers a one-time purchase to keep every feature available.</li>
+        <li><strong>No subscription</strong> &mdash; There are no recurring charges.</li>
+        <li><strong>Restore Purchases</strong> &mdash; Use the in-app restore action to restore Lifetime Unlock for the same Apple Account.</li>
     </ul>
 
     <h2>Support</h2>
-    <p>For support, questions, or feedback, please contact:</p>
-    <p><strong>Email:</strong> <a href="mailto:wnkeene082@gmail.com">wnkeene082@gmail.com</a></p>
+    <p>For support, questions, feedback, or App Store review follow-up, please use our feedback form:</p>
+    <p><strong>Feedback:</strong> <a href="https://forms.gle/eumYfYn8RzG9ctYp8" target="_blank" rel="noopener">Keene Apps feedback form</a></p>
+
+    <div class="feature-section">
+        <h3>Content is not loading</h3>
+        <p>EPIC depends on live NASA services for most content. If you are offline, NASA is rate limiting requests, or NASA's servers are temporarily unavailable, some sections may not load until you try again later. The app can fall back to a cached APOD entry when one is available.</p>
+    </div>
+
+    <div class="feature-section">
+        <h3>NASA TV says "No Broadcast"</h3>
+        <p>This usually means NASA is not currently running a live broadcast on that channel. Try again later or check NASA's published schedule for upcoming live events and launches.</p>
+    </div>
+
+    <div class="feature-section">
+        <h3>Restore purchases</h3>
+        <p>If you already bought Lifetime Unlock, open EPIC and use <strong>Restore Purchases</strong> from the paywall. Restores are handled by Apple's App Store and require the same Apple Account used for the original purchase.</p>
+    </div>
+
+    <div class="feature-section">
+        <h3>Downloads and library data</h3>
+        <p>On Mac, EPIC opens a save panel that defaults to your Downloads folder. On iPhone and iPad, the system file exporter lets you choose where to save the file. Favorites, download history, and saved APOD data are stored with Apple's SwiftData framework and may sync privately through your iCloud account when CloudKit is available.</p>
+    </div>
 
     <h2>Privacy</h2>
-    <p>EPIC does not collect, store, or transmit any personal data. All favorites and cached data stay on your device.</p>
+    <p>EPIC does not use analytics, advertising, or third-party tracking SDKs. The app stores library data with Apple's system frameworks and may sync that data through your private iCloud account when available. NASA content requests go directly to NASA's public services.</p>
     <p><a href="privacy.html">Read our full Privacy Policy</a></p>
 
     <h2>Share</h2>
