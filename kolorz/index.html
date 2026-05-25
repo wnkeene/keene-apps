@@ -36,9 +36,6 @@
             color: #1d1d1f;
             margin-top: 30px;
         }
-        h3 {
-            color: #424245;
-        }
         ul {
             line-height: 1.8;
         }
@@ -81,36 +78,6 @@
         .app-store-badge img {
             height: 50px;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-            background: white;
-        }
-        th, td {
-            text-align: left;
-            padding: 8px 12px;
-            border-bottom: 1px solid #d2d2d7;
-        }
-        th {
-            background: #e8e8ed;
-        }
-        td code {
-            font-family: "SF Mono", Menlo, Monaco, Consolas, monospace;
-            font-size: 0.9em;
-            background: #f5f5f7;
-            padding: 1px 6px;
-            border-radius: 4px;
-        }
-        .feature-section {
-            margin: 25px 0;
-            padding: 20px;
-            background: white;
-            border-radius: 12px;
-        }
-        .feature-section h3 {
-            margin-top: 0;
-        }
         .link-row {
             display: flex;
             flex-wrap: wrap;
@@ -133,6 +100,10 @@
         }
         .link-row a:hover, .link-row button:hover { opacity: 0.8; }
         .link-row svg { flex-shrink: 0; }
+        code {
+            font-family: "SF Mono", Menlo, Monaco, Consolas, monospace;
+            font-size: 0.9em;
+        }
         kbd {
             font-family: "SF Mono", Menlo, Monaco, Consolas, monospace;
             font-size: 0.9em;
@@ -146,18 +117,9 @@
             body { background-color: #1c1c1e; color: #f5f5f7; }
             h1 { color: #f5f5f7; }
             h2 { color: #f5f5f7; }
-            h3 { color: #d1d1d6; }
             strong { color: #f5f5f7; }
             .subtitle { color: #98989d; }
             .footer { border-top-color: #38383a; color: #98989d; }
-            .feature-section { background: #2c2c2e; }
-
-            table { background: #2c2c2e; color: #f5f5f7; }
-            th { background: #3a3a3c; color: #f5f5f7; }
-            td { color: #e5e5e7; }
-            th, td { border-bottom-color: #48484a; }
-            td code { background: #1c1c1e; color: #f5f5f7; }
-
             kbd { background: #3a3a3c; border-color: #48484a; color: #f5f5f7; }
         }
     </style>
@@ -170,7 +132,7 @@
     </div>
 
     <h1>Kolorz</h1>
-    <p class="subtitle">Native Mac color picker &mdash; pick from anywhere, copy HEX, RGB, and HSL, with menu bar access and recent color history.</p>
+    <p class="subtitle">Native Mac color picker — pick from anywhere, copy HEX, RGB, and HSL, with menu bar access and recent color history.</p>
 
     <div class="app-store-badge">
         <a href="https://apps.apple.com/app/kolorz-color-picker/id6763769966" target="_blank" rel="noopener">
@@ -178,104 +140,34 @@
         </a>
     </div>
 
-    <p><strong>Platform:</strong> macOS 14.0+</p>
+    <h2>About</h2>
+    <p>Kolorz is the simplest way to pick a color on macOS and copy it in the format you actually need. It uses Apple's built-in color picker — the same one you already know from Pages, Keynote, and Preview — and adds the things it has always been missing: every color value ready to copy, a global eyedropper shortcut, recent color history, and menu bar access. Kolorz is pure SwiftUI and AppKit, runs fully sandboxed on Mac, and does not collect any data. Your colors never leave your Mac.</p>
 
-    <h2>What It Does</h2>
-    <p>Kolorz is the simplest way to pick a color on macOS and copy it in the format you actually need. It uses Apple&rsquo;s built-in color picker &mdash; the same one you already know from Pages, Keynote, and Preview &mdash; and adds the things it has always been missing: every color value ready to copy, a global eyedropper shortcut, recent color history, and menu bar access.</p>
+    <h2>Features</h2>
+    <ul>
+        <li><strong>Output Formats</strong> — Copy as HEX (<code>#FF6B35</code>), RGB (<code>rgb(255, 107, 53)</code>), or HSL (<code>hsl(16, 100%, 60%)</code>)</li>
+        <li><strong>Menu Bar Access</strong> — Open the eyedropper, current color, and recent history from any app; launch the system eyedropper from the popover; open the full color panel, clear history, or access settings from the overflow menu</li>
+        <li><strong>Pick from Anywhere</strong> — Press <kbd>⌥⌘C</kbd> from any app to launch the eyedropper (customizable in Settings); click any pixel on screen with the system magnifier loupe; use the color wheel, sliders, palettes, and image samplers</li>
+        <li><strong>Recent Colors</strong> — Every sampled color is saved to a persistent history of your last 24 colors; click any swatch to recall it, or drag recent colors into the color panel's swatch grid</li>
+        <li><strong>Copy</strong> — Click the copy icon on any row to put that format on your clipboard; drag recent colors into Sketch, Figma, Xcode, or any app that accepts color drops</li>
+        <li><strong>Paste to Convert</strong> — Paste any color value into any row and press <kbd>Return</kbd> to parse it, apply it to the picker, and update every other format; accepts legacy and modern CSS syntax for HEX, RGB, and HSL with round-trip accuracy</li>
+        <li><strong>Settings</strong> — Keep the color panel floating above every other app, start Kolorz at login, and remap the global eyedropper shortcut to any key combination you prefer</li>
+        <li><strong>Keyboard Shortcuts</strong> — <kbd>⌥⌘C</kbd> Pick Color (global, customizable), <kbd>⇧⌘P</kbd> Pick Color (in-app), <kbd>⌘1</kbd> Copy HEX, <kbd>⌘2</kbd> Copy RGB, <kbd>⌘3</kbd> Copy HSL</li>
+        <li><strong>Clear Swatches</strong> — Choose <strong>Color › Clear Swatches…</strong> from the menu bar to reset the color panel's swatch grid; Kolorz quits, clears saved swatches, and relaunches fresh from the Dock or Applications folder</li>
+    </ul>
 
-    <h2>Output Formats</h2>
-    <table>
-        <tr><th>Format</th><th>Example</th></tr>
-        <tr><td>HEX</td><td><code>#FF6B35</code></td></tr>
-        <tr><td>RGB</td><td><code>rgb(255, 107, 53)</code></td></tr>
-        <tr><td>HSL</td><td><code>hsl(16, 100%, 60%)</code></td></tr>
-    </table>
-
-    <div class="feature-section">
-        <h3>Menu Bar Access</h3>
-        <ul>
-            <li><strong>Always One Click Away</strong> &mdash; The menu bar icon gives you instant access to the eyedropper, current color, and recent history from any app.</li>
-            <li><strong>Pick Color Button</strong> &mdash; Launch the system eyedropper directly from the popover.</li>
-            <li><strong>Quick Actions</strong> &mdash; Open the full color panel, clear history, or access settings from the overflow menu.</li>
-        </ul>
-    </div>
-
-    <div class="feature-section">
-        <h3>Pick from Anywhere</h3>
-        <ul>
-            <li><strong>Global Shortcut</strong> &mdash; Press <kbd>⌥⌘C</kbd> from any app to launch the eyedropper. No need to switch to Kolorz first. The shortcut is fully customizable in Settings.</li>
-            <li><strong>Eyedropper</strong> &mdash; Click any pixel on screen with the system magnifier loupe.</li>
-            <li><strong>Color Wheel, Sliders, Palettes</strong> &mdash; Every native macOS picking tool, in one window.</li>
-            <li><strong>Image Samplers</strong> &mdash; Pull palettes from any image you drop in.</li>
-        </ul>
-    </div>
-
-    <div class="feature-section">
-        <h3>Recent Colors</h3>
-        <ul>
-            <li><strong>Automatic History</strong> &mdash; Every color you sample is saved to a persistent history of your last 24 colors.</li>
-            <li><strong>One-Click Recall</strong> &mdash; Click any recent swatch to set it as the current color.</li>
-            <li><strong>Drag to Swatches</strong> &mdash; Drag any recent color directly into the color panel&rsquo;s swatch grid to save it permanently.</li>
-        </ul>
-    </div>
-
-    <div class="feature-section">
-        <h3>Copy</h3>
-        <ul>
-            <li><strong>One-Click Copy</strong> &mdash; Click the copy icon on any row to put that format on your clipboard.</li>
-            <li><strong>Drag &amp; Drop</strong> &mdash; Drag recent colors straight into Sketch, Figma, Xcode, or any app that accepts color drops.</li>
-        </ul>
-    </div>
-
-    <div class="feature-section">
-        <h3>Paste to Convert</h3>
-        <ul>
-            <li><strong>Bidirectional Conversion</strong> &mdash; Paste any color value into any row and press <kbd>Return</kbd>. Kolorz parses it, applies it to the picker, and updates every other format.</li>
-            <li><strong>Modern CSS Syntax</strong> &mdash; Accepts both legacy comma-separated (<code>rgb(255, 107, 53)</code>) and modern space-separated (<code>rgb(255 107 53)</code>) CSS syntax.</li>
-            <li><strong>Round-Trip Accurate</strong> &mdash; Works with HEX (including 3-character shorthand like <code>#FFF</code>), RGB, and HSL. No precision loss.</li>
-        </ul>
-    </div>
-
-    <div class="feature-section">
-        <h3>Settings</h3>
-        <ul>
-            <li><strong>Stay on Top</strong> &mdash; Keep the color panel floating above every other app. Persistent between launches.</li>
-            <li><strong>Launch at Login</strong> &mdash; Start Kolorz automatically when you log in.</li>
-            <li><strong>Custom Shortcut</strong> &mdash; Remap the global eyedropper shortcut to any key combination you prefer.</li>
-        </ul>
-    </div>
-
-    <div class="feature-section">
-        <h3>Keyboard Shortcuts</h3>
-        <ul>
-            <li><kbd>⌥⌘C</kbd> &mdash; Pick Color (global &mdash; works from any app, customizable)</li>
-            <li><kbd>⇧⌘P</kbd> &mdash; Pick Color (in-app)</li>
-            <li><kbd>⌘1</kbd> &mdash; Copy HEX</li>
-            <li><kbd>⌘2</kbd> &mdash; Copy RGB</li>
-            <li><kbd>⌘3</kbd> &mdash; Copy HSL</li>
-        </ul>
-    </div>
-
-    <div class="feature-section">
-        <h3>Clear Swatches</h3>
-        <p>To reset the color panel&rsquo;s swatch grid, choose <strong>Color &rsaquo; Clear Swatches&hellip;</strong> from the menu bar. Kolorz will quit and clear the saved swatches. Relaunch from the Dock or Applications folder to start fresh.</p>
-    </div>
-
-    <div class="feature-section">
-        <h3>100% Native</h3>
-        <ul>
-            <li><strong>No Electron</strong> &mdash; Pure SwiftUI &amp; AppKit. Built on the system color picker.</li>
-            <li><strong>No Tracking</strong> &mdash; Kolorz does not collect any data. Your colors never leave your Mac.</li>
-            <li><strong>Sandboxed</strong> &mdash; Runs fully sandboxed on Mac.</li>
-        </ul>
-    </div>
+    <h2>Platform Support</h2>
+    <ul>
+        <li><strong>Mac</strong> &mdash; macOS 14.0+</li>
+    </ul>
 
     <h2>Support</h2>
-    <p>For questions, feedback, or support requests, please use our feedback form:</p>
+    <p>For questions, feedback, or App Store follow-up, use our feedback form:</p>
     <p><strong>Feedback:</strong> <a href="https://forms.gle/eumYfYn8RzG9ctYp8" target="_blank" rel="noopener">Keene Apps feedback form</a></p>
 
     <h2>Privacy</h2>
-    <p>Kolorz respects your privacy. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+    <p>Kolorz does not use analytics, advertising, or third-party tracking SDKs. Your color history and settings stay on your Mac.</p>
+    <p><a href="privacy.html">Read our full Privacy Policy</a></p>
 
     <h2>Share</h2>
     <div class="link-row">
