@@ -65,7 +65,7 @@
     
     <h1>Privacy Policy</h1>
     <p class="subtitle">DotDay</p>
-    <p><em>Last updated: May 1, 2026</em></p>
+    <p><em>Last updated: June 17, 2026</em></p>
     
     <div class="highlight">
         <p><strong>Simple Summary:</strong> DotDay does not collect, store, transmit, or share any of your personal information. Calendar and contact data is accessed through Apple's frameworks and stays on your device and in your iCloud account.</p>
@@ -79,14 +79,17 @@
     <p>Calendar data lives in Apple's Calendar and iCloud systems according to your Apple ID settings — not on servers we operate.</p>
     
     <h2>Contacts Access</h2>
-    <p>If you use "Choose from Contacts" when adding a location to an event, DotDay reads contact data only to help you pick an address. This access follows Apple's Contacts permission rules and can be turned off in your device's Settings at any time. Contact data is never stored or transmitted by DotDay.</p>
+    <p>If you use "Choose from Contacts" when creating an event, DotDay presents Apple's system contact picker. You choose a contact in that picker; DotDay uses the name for the event title and an address for the place name if one is available. DotDay does not maintain its own contacts database and does not store or transmit contact data.</p>
+    
+    <h2>Reminders Access</h2>
+    <p>DotDay uses Apple's EventKit framework to read and write reminders in lists you already use. This requires your explicit permission. Reminder data lives in Apple's Reminders and iCloud systems — not on servers we operate.</p>
     
     <h2>Data Storage</h2>
     <p>The app stores the following preference data:</p>
     <ul>
-        <li>Your preferred default calendar selection (stored locally via Apple's standard UserDefaults)</li>
-        <li>Your preferred default reminder setting (stored locally via Apple's standard UserDefaults)</li>
-        <li>App preferences such as "Always start at today" (synced across your devices via Apple's iCloud Key-Value Store)</li>
+        <li>Your preferred default calendar selection (stored locally on each device)</li>
+        <li>Your preferred default reminder list and auto-advance setting (stored locally on Mac; synced across iPhone and iPad via Apple's iCloud Key-Value Store)</li>
+        <li>Which calendars are visible in DotDay (stored locally on each device)</li>
     </ul>
     <p>Preferences synced via iCloud Key-Value Store are part of Apple's iCloud infrastructure and subject to Apple's iCloud privacy policy. This data is never accessible to us or any third parties outside of Apple's systems.</p>
     
@@ -114,7 +117,7 @@
     <ul>
         <li><strong>Access:</strong> Your preferences are stored locally and never shared</li>
         <li><strong>Deletion:</strong> Simply delete the app to remove all local data</li>
-        <li><strong>Permissions:</strong> Revoke calendar or contacts access anytime in Settings</li>
+        <li><strong>Permissions:</strong> Revoke calendar or reminders access anytime in Settings</li>
         <li><strong>Control:</strong> You can change preferences anytime within the app</li>
     </ul>
     
