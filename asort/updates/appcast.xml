@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Asort</title>
+        <item>
+            <title>1.0</title>
+            <pubDate>Sun, 25 Oct 2026 12:03:56 -0500</pubDate>
+            <link>https://wnkeene.github.io/keene-apps/asort/</link>
+            <sparkle:version>22</sparkle:version>
+            <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://wnkeene.github.io/keene-apps/asort/updates/Asort-1.0-22.zip" length="1743165" type="application/octet-stream" sparkle:edSignature="Q/2XYCvhMqs+yriq1ysc9cjawqtjzFcHQoy6lV/KLsPNawwdpy1ltZl3k3AM79jK7fx8ih06SkC5KDg8GuV+DQ=="/>
+        </item>
+    </channel>
+</rss>
